@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8934727831576854"
+     crossorigin="anonymous"></script>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Techvilla — Phones & Gadgets</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <div class="brand">
+          <img class="site-logo" src="images/Techvilla-logo.png" alt="Techvilla logo" />
+          <h1>Techvilla Gadget store</h1>
+        </div>
+        <nav class="nav">
+          <input id="search" class="search" type="search" placeholder="Search phones, gadgets..." aria-label="Search products" />
+          <select id="categoryFilter" class="select">
+            <option value="all">All categories</option>
+            <option value="phones">Phones</option>
+            <option value="laptops">Laptops</option>
+            <option value="tablets">Tablets</option>
+            <option value="audio">Audio</option>
+            <option value="accessories">Accessories</option>
+            <option value="consoles">Consoles</option>
+            <option value="wearables">Wearables</option>
+            <option value="vehicles">Vehicles</option>
+            <option value="deals">Festive Deals</option>
+          </select>
+          <button id="cartBtn" class="cart-btn" aria-label="Open cart">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="9" cy="21" r="1"></circle>
+              <circle cx="20" cy="21" r="1"></circle>
+              <path d="m1 1 4 4 13 3.5-3 7H6"></path>
+              <path d="M16 8 6 8"></path>
+            </svg>
+            <span id="cartCount" class="cart-count">0</span>
+          </button>
+        </nav>
+      </div>
+    </header>
+
+    <section class="holiday-banner" aria-label="Christmas and New Year greeting">
+      <div class="holiday-snow" aria-hidden="true">
+        <span></span><span></span><span></span><span></span><span></span>
+      </div>
+      <div class="container holiday-banner-inner">
+        <p class="holiday-kicker">Season's Greetings</p>
+        <h2>Merry Christmas &amp; Happy New Year!</h2>
+        <p>From all of us at Techvilla — thank you for choosing us. Wishing you joy, peace, and amazing deals this festive season.</p>
+      </div>
+    </section>
+
+    <main class="container main">
+      <section class="hero">
+        <!-- 3D live-photos panel (left half) -->
+        <div class="live-photos-panel" aria-hidden="true">
+          <div class="layers" id="liveLayers">
+            <!-- layers will be injected by scripts.js -->
+          </div>
+          <div class="live-overlay">Live Photos</div>
+        </div>
+        <div>
+          <h2>Latest phones & smart gadgets</h2>
+          <p>Top brands, best deals, and fast delivery — discover your next device at Techvilla.</p>
+        </div>
+        <div class="hero-image" aria-hidden="true">
+          <picture>
+            <source media="(min-width:900px)" srcset="images/Macbook pro.jpg">
+            <source media="(min-width:480px)" srcset="images/earbuds.webp">
+            <img src="images/iphone 11promax 64gb.jpeg" alt="Hero" />
+          </picture>
+        </div>
+      </section>
+
+      <section class="products-section">
+        <h3>Featured Products</h3>
+        <div id="products" class="products-grid" aria-live="polite"></div>
+      </section>
+      
+      <section class="deals-section festive-deals-section">
+        <div class="festive-deals-heading">
+          <p>Christmas &amp; New Year Offers</p>
+          <h3>Shop Festive Deals</h3>
+        </div>
+        <div id="dealsGrid" class="deals-grid" aria-live="polite"></div>
+      </section>
+    </main>
+
+    <!-- Product Modal -->
+    <div id="productModal" class="modal" aria-hidden="true">
+      <div class="modal-content" role="dialog" aria-modal="true">
+        <button id="modalClose" class="modal-close" aria-label="Close">×</button>
+        <div class="modal-body">
+          <img id="modalImage" src="" alt="" />
+          <div class="modal-info">
+            <h4 id="modalTitle"></h4>
+            <p id="modalDesc"></p>
+            <div class="modal-actions">
+              <strong id="modalPrice"></strong>
+              <button id="addToCart" class="btn primary">Add to cart</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>© <span id="year"></span> Techvilla — Phones & Gadgets</p>
+      </div>
+    </footer>
+
+    <script src="scripts.js"></script>
+    <!-- WhatsApp floating button -->
+    <a class="whatsapp-fab" href="https://wa.me/2348146928961" target="_blank" rel="noopener" aria-label="Contact us on WhatsApp">
+      <img src="images/WhatsApp.webp" alt="WhatsApp" />
+    </a>
+    <!-- Christmas and New Year greeting popup -->
+    <div id="christmasModal" class="modal christmas-modal" aria-hidden="true">
+      <div class="christmas-modal-content" role="dialog" aria-modal="true" aria-labelledby="christmasTitle">
+        <button id="christmasModalClose" class="modal-close christmas-close" aria-label="Close greeting">×</button>
+        <div class="christmas-decoration" aria-hidden="true">★ <span>✦</span> ★</div>
+        <p class="christmas-kicker">Techvilla wishes you</p>
+        <h2 id="christmasTitle">Merry Christmas &amp;<br />Happy New Year!</h2>
+        <p class="christmas-message">May the season bring you joy, warmth, and the perfect gadget for every moment.</p>
+        <button id="christmasShopBtn" class="btn christmas-shop-btn">Shop Festive Deals</button>
+      </div>
+    </div>
+    <!-- Full-size image viewer -->
+    <div id="imageLightbox" class="image-lightbox" aria-hidden="true">
+      <button id="imageLightboxClose" class="image-lightbox-close" aria-label="Close full-size image">×</button>
+      <img id="imageLightboxImage" src="" alt="" />
+    </div>
+    <!-- Toast notifications -->
+    <div id="toast" role="status" aria-live="polite" aria-atomic="true" class="toast" hidden>Added to cart</div>
+  </body>
+</html>
